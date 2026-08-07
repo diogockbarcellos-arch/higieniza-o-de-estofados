@@ -25,26 +25,15 @@
             padding: 0 20px;
         }
 
-        /* Hero Section */
+        /* ===== HERO COM FOTO DE FUNDO ===== */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
-            color: #1565c0;
-            padding: 100px 0;
+            background: linear-gradient(rgba(13, 71, 161, 0.75), rgba(21, 101, 192, 0.65)),
+                        url('foto5.jpg') center/cover no-repeat fixed;
+            color: #fff;
+            padding: 140px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1920&h=1080&fit=crop') center/cover;
-            opacity: 0.1;
         }
 
         .hero-content {
@@ -56,25 +45,28 @@
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
-            color: #0d47a1;
-            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
         }
 
         .hero .subtitle {
             font-size: 1.5rem;
             margin-bottom: 30px;
-            color: #1976d2;
+            color: #bbdefb;
             font-weight: 600;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
             max-width: 900px;
             margin: 0 auto 20px;
             font-size: 1.15rem;
-            color: #424242;
+            color: #f5f5f5;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
 
-        /* Sections */
+        /* ===== SECTIONS ===== */
         section {
             padding: 80px 0;
             background: white;
@@ -124,7 +116,117 @@
             box-shadow: 0 4px 15px rgba(25, 118, 210, 0.1);
         }
 
-        /* Benefits Grid with Images */
+        /* ===== LAYOUT IMAGEM + TEXTO (EXPERIÊNCIA) ===== */
+        .experience-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .experience-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(21, 101, 192, 0.25);
+            transition: transform 0.4s ease;
+        }
+
+        .experience-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* ===== LAYOUT TEXTO + IMAGEM FLUTUANTE (COMEÇAR SOZINHO) ===== */
+        .start-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .floating-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(21, 101, 192, 0.3);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .floating-image::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            background: linear-gradient(135deg, #64b5f6, #1976d2);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(20px);
+        }
+
+        /* ===== GALERIA DE ALUNOS ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(21, 101, 192, 0.2);
+            aspect-ratio: 4/5;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(13, 71, 161, 0.9), transparent);
+            padding: 30px 20px 20px;
+            color: white;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            color: #bbdefb;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* ===== BENEFITS GRID ===== */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -240,25 +342,15 @@
             border-bottom: none;
         }
 
-        /* Pricing Section */
+        /* ===== PRICING COM FOTO DE FUNDO SUTIL ===== */
         .pricing {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+            background: linear-gradient(rgba(227, 242, 253, 0.92), rgba(144, 202, 249, 0.92)),
+                        url('foto3.jpg') center/cover no-repeat fixed;
             color: #1565c0;
             text-align: center;
             padding: 100px 0;
             position: relative;
             overflow: hidden;
-        }
-
-        .pricing::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1584622050111-993a426fbf0a?w=1920&h=1080&fit=crop') center/cover;
-            opacity: 0.08;
         }
 
         .pricing-content {
@@ -277,7 +369,7 @@
             margin: 50px auto;
             padding: 50px;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(21, 101, 192, 0.2);
+            box-shadow: 0 20px 60px rgba(21, 101, 192, 0.3);
             border: 3px solid #64b5f6;
             position: relative;
             z-index: 1;
@@ -366,7 +458,7 @@
             justify-content: center;
         }
 
-        /* FAQ Section */
+        /* ===== FAQ ===== */
         .faq-item {
             background: white;
             border: 2px solid #e3f2fd;
@@ -394,36 +486,7 @@
             line-height: 1.8;
         }
 
-        /* Testimonials Section */
-        .testimonials-section {
-            background: linear-gradient(135deg, #f5faff 0%, #ffffff 100%);
-            padding: 80px 0;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .testimonial-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(100, 181, 246, 0.15);
-            border: 2px solid #e3f2fd;
-        }
-
-        .testimonial-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Stats Section */
+        /* ===== STATS ===== */
         .stats-section {
             background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
             color: white;
@@ -452,7 +515,7 @@
             opacity: 0.95;
         }
 
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
             background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
             color: white;
@@ -472,7 +535,7 @@
             font-size: 1.1rem;
         }
 
-        /* Disclaimer */
+        /* ===== DISCLAIMER ===== */
         .disclaimer {
             font-size: 0.95rem;
             color: #f57c00;
@@ -484,26 +547,25 @@
             border-left: 4px solid #ff9800;
         }
 
-        /* Image placeholders for sofa cleaning */
-        .sofa-image {
-            width: 100%;
-            max-width: 400px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin: 30px auto;
-            display: block;
-            box-shadow: 0 10px 30px rgba(100, 181, 246, 0.2);
-        }
-
-        /* Responsive */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+                background-attachment: scroll;
+            }
+
             .hero h1 {
                 font-size: 2.2rem;
             }
 
             .hero .subtitle {
                 font-size: 1.3rem;
+            }
+
+            .experience-layout,
+            .start-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .current-price {
@@ -526,13 +588,17 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
+
+            .pricing {
+                background-attachment: scroll;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- ===== HERO COM FOTO 5 DE FUNDO ===== -->
     <header class="hero">
-        <div class="container">
+        <div class="container hero-content">
             <h1>GUIA DE HIGIENIZAÇÃO</h1>
             <p class="subtitle">TRANSFORME ESTOFADOS SUJOS EM UMA NOVA FONTE DE RENDA</p>
             <p>Aprenda a trabalhar com higienização de estofados e tenha o seu próprio negócio — mesmo começando do zero.</p>
@@ -542,40 +608,52 @@
         </div>
     </header>
 
-    <!-- Experience Section -->
+    <!-- ===== EXPERIÊNCIA COM FOTO 4 (POLIMENTO) ===== -->
     <section>
         <div class="container">
             <h2>Mais de 10 Anos de Experiência no Mercado</h2>
-            <div class="highlight-box">
-                <p>Nosso método foi desenvolvido a partir de mais de 10 anos de experiência e milhares de alunos formados. Você vai aprender não apenas a limpar um sofá: vai aprender a montar, divulgar, vender e administrar um negócio.</p>
+
+            <div class="experience-layout">
+                <img src="foto4.jpg" alt="Profissional realizando polimento técnico em sofá" class="experience-image">
+                <div>
+                    <div class="highlight-box">
+                        <p>Nosso método foi desenvolvido a partir de mais de 10 anos de experiência e milhares de alunos formados. Você vai aprender não apenas a limpar um sofá: vai aprender a montar, divulgar, vender e administrar um negócio.</p>
+                    </div>
+
+                    <h3>Quanto Você Poderia Faturar Com Esse Negócio?</h3>
+                    <p>Dependendo da sua cidade, preços praticados, quantidade de atendimentos e dedicação, é possível alcançar faturamentos de até <strong>R$ 10 mil por mês ou mais</strong>.</p>
+                    <p>Também temos relatos e depoimentos de alunos que chegaram a R$ 30 mil, R$ 40 mil ou mais de faturamento mensal em determinadas cidades.</p>
+                </div>
             </div>
 
-            <h3>Quanto Você Poderia Faturar Com Esse Negócio?</h3>
-            <p>Dependendo da sua cidade, preços praticados, quantidade de atendimentos e dedicação, é possível alcançar faturamentos de até <strong>R$ 10 mil por mês ou mais</strong>.</p>
-            <p>Também temos relatos e depoimentos de alunos que chegaram a R$ 30 mil, R$ 40 mil ou mais de faturamento mensal em determinadas cidades.</p>
-            
             <div class="disclaimer">
                 <em>Importante: os resultados não são garantidos e variam conforme região, experiência, preços, número de clientes e dedicação de cada profissional.</em>
             </div>
 
-            <p>E existe algo que todos eles tiveram em comum: <strong>começaram aprendendo</strong>.</p>
+            <p style="text-align:center; font-size:1.15rem;">E existe algo que todos eles tiveram em comum: <strong>começaram aprendendo</strong>.</p>
         </div>
     </section>
 
-    <!-- Start Alone Section -->
+    <!-- ===== COMEÇAR SOZINHO COM FOTO 1 FLUTUANTE ===== -->
     <section>
         <div class="container">
             <h2>Você Pode Começar Sozinho</h2>
-            <ul class="check-list">
-                <li>Trabalhar sozinho</li>
-                <li>Atender na casa do cliente</li>
-                <li>Começar com poucos equipamentos</li>
-                <li>Trabalhar de forma autônoma</li>
-                <li>Construir sua carteira de clientes aos poucos</li>
-                <li>Reinvestir parte do faturamento no crescimento</li>
-                <li>Transformar o serviço em um negócio próprio</li>
-            </ul>
-            <p class="highlight-box"><strong>Você não precisa esperar ter uma empresa enorme para começar. Você pode começar pequeno e crescer conforme os seus resultados.</strong></p>
+
+            <div class="start-layout">
+                <div>
+                    <ul class="check-list">
+                        <li>Trabalhar sozinho</li>
+                        <li>Atender na casa do cliente</li>
+                        <li>Começar com poucos equipamentos</li>
+                        <li>Trabalhar de forma autônoma</li>
+                        <li>Construir sua carteira de clientes aos poucos</li>
+                        <li>Reinvestir parte do faturamento no crescimento</li>
+                        <li>Transformar o serviço em um negócio próprio</li>
+                    </ul>
+                    <p class="highlight-box"><strong>Você não precisa esperar ter uma empresa enorme para começar. Você pode começar pequeno e crescer conforme os seus resultados.</strong></p>
+                </div>
+                <img src="foto1.jpg" alt="Profissional realizando limpeza detalhada em estofado" class="floating-image">
+            </div>
 
             <h3>Um Investimento Que Pode Se Pagar Com os Primeiros Serviços</h3>
             <p>A higienização de estofados pode ser iniciada com uma estrutura relativamente enxuta. Você aprende quais equipamentos realmente precisa, quais produtos utilizar, como fazer a diluição correta e como trabalhar com segurança.</p>
@@ -587,7 +665,7 @@
         </div>
     </section>
 
-    <!-- Modules Section -->
+    <!-- ===== MÓDULOS ===== -->
     <section>
         <div class="container">
             <h2>O Que Você Vai Aprender</h2>
@@ -671,11 +749,11 @@
         </div>
     </section>
 
-    <!-- Certification & Support Section -->
+    <!-- ===== CERTIFICAÇÃO ===== -->
     <section>
         <div class="container">
             <h2>Certificação e Suporte</h2>
-            
+
             <h3>Certificação</h3>
             <p>Ao concluir o treinamento, você recebe seu certificado de conclusão, comprovando sua formação no Guia de Higienização.</p>
 
@@ -685,20 +763,40 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- ===== GALERIA DE ALUNOS COM FOTOS 2 E 3 ===== -->
     <section>
         <div class="container">
             <h2>Milhares de Alunos Já Foram Formados</h2>
-            <p>Ao longo de mais de 10 anos de experiência, ajudamos milhares de pessoas a aprender essa profissão e dar os primeiros passos no mercado.</p>
-            <p>Alguns começaram como renda extra. Outros começaram trabalhando sozinhos. E muitos transformaram a higienização em sua principal atividade profissional.</p>
+            <p style="text-align:center; max-width:800px; margin:0 auto;">Ao longo de mais de 10 anos de experiência, ajudamos milhares de pessoas a aprender essa profissão e dar os primeiros passos no mercado.</p>
+            <p style="text-align:center; max-width:800px; margin:0 auto;">Alguns começaram como renda extra. Outros começaram trabalhando sozinhos. E muitos transformaram a higienização em sua principal atividade profissional.</p>
 
-            <div class="testimonials-placeholder">
-                <h3>[INSIRA AQUI OS DEPOIMENTOS EM VÍDEO, PRINTS DE RESULTADOS E FOTOS DOS ALUNOS]</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="foto2.jpg" alt="Aplicação de produto em sofá">
+                    <div class="gallery-overlay">
+                        <h4>Aplicação Técnica</h4>
+                        <p>Produtos específicos para cada tipo de tecido</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="foto3.jpg" alt="Extração profunda em cadeira estofada">
+                    <div class="gallery-overlay">
+                        <h4>Extração Profunda</h4>
+                        <p>Remoção completa de sujeira e ácaros</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="foto4.jpg" alt="Polimento e acabamento profissional">
+                    <div class="gallery-overlay">
+                        <h4>Acabamento Profissional</h4>
+                        <p>Resultado impecável em cada atendimento</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
+    <!-- ===== CTA ===== -->
     <section>
         <div class="container">
             <h2>Agora É a Sua Vez de Começar</h2>
@@ -708,9 +806,9 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- ===== PREÇO COM FOTO 3 DE FUNDO SUTIL ===== -->
     <section id="pricing" class="pricing">
-        <div class="container">
+        <div class="container pricing-content">
             <h2>Investimento</h2>
             <div class="price-box">
                 <p class="old-price">DE R$ 597 POR APENAS:</p>
@@ -718,7 +816,7 @@
                     <small>R$</small> 597
                 </div>
                 <div class="payment-type">PAGAMENTO ÚNICO</div>
-                
+
                 <p>Você recebe acesso ao treinamento completo, com conteúdo profissional, aulas práticas, técnicas de higienização, equipamentos, produtos, atendimento, vendas e estratégias para começar seu negócio.</p>
 
                 <ul class="benefits-list check-list">
@@ -745,7 +843,7 @@
         </div>
     </section>
 
-    <!-- Final CTA Section -->
+    <!-- ===== CTA FINAL ===== -->
     <section>
         <div class="container">
             <h2>Não Deixe Para Depois</h2>
@@ -760,7 +858,7 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- ===== FAQ ===== -->
     <section>
         <div class="container">
             <h2>Perguntas Frequentes</h2>
@@ -807,12 +905,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
             <h3>SUA NOVA PROFISSÃO PODE COMEÇAR COM UMA DECISÃO</h3>
             <p style="font-size: 1.5rem; font-weight: 700; margin: 20px 0;">APRENDA. COMECE. ATENDA. CRESÇA.</p>
-            
+
             <div class="stats">
                 <div class="stat-item">
                     <div class="stat-number">10+</div>
