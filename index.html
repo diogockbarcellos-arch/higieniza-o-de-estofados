@@ -3,932 +3,548 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Higienização - Transforme Estofados Sujos em Uma Nova Fonte de Renda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Guia de Higienização - Transforme Estofados em Renda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e3f2fd;
+            --accent-green: #28a745;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(180deg, #f0f8ff 0%, #ffffff 100%);
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* ===== HERO COM FOTO DE FUNDO ===== */
-        .hero {
-            background: linear-gradient(rgba(13, 71, 161, 0.75), rgba(21, 101, 192, 0.65)),
-                        url('foto5.jpg') center/cover no-repeat fixed;
-            color: #fff;
-            padding: 140px 0;
+        /* HERO SECTION */
+        header {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.6)), url('https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/sofa-hero.jpg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: 100px 20px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
+        header h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            text-transform: uppercase;
             font-weight: 700;
-            color: #ffffff;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .hero .subtitle {
-            font-size: 1.5rem;
+        header p {
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            color: #bbdefb;
-            font-weight: 600;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero p {
-            max-width: 900px;
-            margin: 0 auto 20px;
-            font-size: 1.15rem;
-            color: #f5f5f5;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        .btn-cta {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            animation: pulse 2s infinite;
         }
 
-        /* ===== SECTIONS ===== */
+        .btn-cta:hover {
+            transform: scale(1.05);
+            background-color: #218838;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(40, 167, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+        }
+
+        /* SECTIONS GENERAL */
         section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        section:nth-child(even) {
-            background: linear-gradient(180deg, #f5faff 0%, #ffffff 100%);
+            padding: 60px 0;
         }
 
         h2 {
-            color: #1565c0;
-            font-size: 2.3rem;
-            margin-bottom: 40px;
+            color: var(--primary-blue);
             text-align: center;
-            font-weight: 700;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #64b5f6, #1976d2);
-            margin: 15px auto 0;
-            border-radius: 2px;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
         }
 
         h3 {
-            color: #1976d2;
-            font-size: 1.6rem;
-            margin: 40px 0 25px;
-            font-weight: 600;
-        }
-
-        p {
+            color: var(--primary-blue);
             margin-bottom: 15px;
-            color: #555;
         }
 
-        .highlight-box {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-left: 5px solid #1976d2;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 0 12px 12px 0;
-            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.1);
-        }
-
-        /* ===== LAYOUT IMAGEM + TEXTO (EXPERIÊNCIA) ===== */
-        .experience-layout {
+        /* EXPERIENCE SECTION */
+        .experience-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 40px;
             align-items: center;
-            margin: 40px 0;
         }
 
-        .experience-image {
+        .experience-img img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(21, 101, 192, 0.25);
-            transition: transform 0.4s ease;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .experience-image:hover {
-            transform: scale(1.02);
+        /* BENEFITS SECTION */
+        .benefits-section {
+            background-color: var(--light-blue);
         }
 
-        /* ===== LAYOUT TEXTO + IMAGEM FLUTUANTE (COMEÇAR SOZINHO) ===== */
-        .start-layout {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 50px;
-            align-items: center;
-            margin: 40px 0;
-        }
-
-        .floating-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 25px 60px rgba(21, 101, 192, 0.3);
-            position: relative;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-
-        .floating-image::before {
-            content: '';
-            position: absolute;
-            inset: -15px;
-            background: linear-gradient(135deg, #64b5f6, #1976d2);
-            border-radius: 25px;
-            z-index: -1;
-            opacity: 0.3;
-            filter: blur(20px);
-        }
-
-        /* ===== GALERIA DE ALUNOS ===== */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(21, 101, 192, 0.2);
-            aspect-ratio: 4/5;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(13, 71, 161, 0.9), transparent);
-            padding: 30px 20px 20px;
-            color: white;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .gallery-overlay h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .gallery-overlay p {
-            color: #bbdefb;
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* ===== BENEFITS GRID ===== */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin: 40px 0;
         }
 
         .benefit-card {
             background: white;
-            border-radius: 15px;
             padding: 30px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(100, 181, 246, 0.15);
-            transition: all 0.3s ease;
-            border: 2px solid #e3f2fd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
         .benefit-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(100, 181, 246, 0.25);
-            border-color: #64b5f6;
+            transform: translateY(-5px);
         }
 
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #e3f2fd 0%, #64b5f6 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-
-        .benefit-card h4 {
-            color: #1565c0;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .benefit-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         .check-list {
             list-style: none;
-            margin: 30px 0;
+            text-align: left;
+            margin-top: 20px;
         }
 
         .check-list li {
-            padding: 12px 0 12px 40px;
+            margin-bottom: 10px;
+            padding-left: 25px;
             position: relative;
-            font-size: 1.05rem;
-            color: #424242;
         }
 
-        .check-list li:before {
-            content: "✓";
+        .check-list li::before {
+            content: '✓';
+            color: var(--accent-green);
             position: absolute;
             left: 0;
-            color: #4caf50;
             font-weight: bold;
-            font-size: 1.3rem;
-            background: #e8f5e9;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .modules {
+        /* MODULES SECTION */
+        .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .module-card {
-            background: white;
-            border: 2px solid #e3f2fd;
+            border: 1px solid #eee;
             border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(100, 181, 246, 0.1);
-        }
-
-        .module-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(100, 181, 246, 0.25);
-            border-color: #64b5f6;
-        }
-
-        .module-card h4 {
-            color: #1565c0;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #64b5f6;
-            padding-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .module-card ul {
-            list-style: none;
-        }
-
-        .module-card ul li {
-            padding: 10px 0;
-            border-bottom: 1px solid #f0f0f0;
-            color: #555;
-        }
-
-        .module-card ul li:last-child {
-            border-bottom: none;
-        }
-
-        /* ===== PRICING COM FOTO DE FUNDO SUTIL ===== */
-        .pricing {
-            background: linear-gradient(rgba(227, 242, 253, 0.92), rgba(144, 202, 249, 0.92)),
-                        url('foto3.jpg') center/cover no-repeat fixed;
-            color: #1565c0;
-            text-align: center;
-            padding: 100px 0;
-            position: relative;
             overflow: hidden;
-        }
-
-        .pricing-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .pricing h2 {
-            color: #0d47a1;
-        }
-
-        .price-box {
             background: white;
-            color: #333;
-            max-width: 650px;
-            margin: 50px auto;
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(21, 101, 192, 0.3);
-            border: 3px solid #64b5f6;
-            position: relative;
-            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.4rem;
+        .module-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .current-price {
-            font-size: 4.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #4caf50, #8bc34a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 25px 0;
+        .module-content {
+            padding: 25px;
         }
 
-        .current-price small {
-            font-size: 1.6rem;
-            color: #333;
-            -webkit-text-fill-color: #333;
+        .module-content ul {
+            list-style: none;
+            margin-top: 15px;
         }
 
-        .payment-type {
-            background: linear-gradient(135deg, #4caf50, #8bc34a);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-bottom: 35px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #4caf50, #8bc34a);
-            color: white;
-            padding: 25px 60px;
-            font-size: 1.6rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
-            margin: 40px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.08);
-            box-shadow: 0 12px 35px rgba(76, 175, 80, 0.6);
-        }
-
-        .benefits-list {
-            text-align: left;
-            margin: 35px 0;
-        }
-
-        .benefits-list li {
-            padding: 12px 0 12px 40px;
-            position: relative;
+        .module-content li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
             color: #555;
         }
 
-        .benefits-list li:before {
-            content: "✓";
+        .module-content li::before {
+            content: '•';
+            color: var(--primary-blue);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* PRICING SECTION */
+        .pricing-section {
+            background: linear-gradient(135deg, var(--primary-blue), #003d80);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .pricing-box {
+            background: white;
+            color: var(--text-dark);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #777;
+            font-size: 1.2rem;
+        }
+
+        .price-new {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin: 10px 0;
+        }
+
+        .features-list {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: var(--accent-green);
             position: absolute;
             left: 0;
-            color: #4caf50;
             font-weight: bold;
-            background: #e8f5e9;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        /* ===== FAQ ===== */
+        /* FAQ SECTION */
         .faq-item {
             background: white;
-            border: 2px solid #e3f2fd;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 25px 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(100, 181, 246, 0.1);
-        }
-
-        .faq-item:hover {
-            border-color: #64b5f6;
-            box-shadow: 0 10px 30px rgba(100, 181, 246, 0.2);
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
         .faq-question {
-            font-weight: 700;
-            color: #1565c0;
-            font-size: 1.3rem;
-            margin-bottom: 18px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            display: flex;
+            justify-content: space-between;
         }
 
         .faq-answer {
+            margin-top: 15px;
+            display: none;
             color: #555;
-            line-height: 1.8;
         }
 
-        /* ===== STATS ===== */
-        .stats-section {
-            background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
-            color: white;
-            padding: 60px 0;
+        .faq-item.active .faq-answer {
+            display: block;
         }
 
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #81c784;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         footer {
-            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            background-color: #222;
             color: white;
             text-align: center;
-            padding: 60px 0;
+            padding: 40px 20px;
         }
 
-        footer h3 {
-            color: white;
-            margin-bottom: 25px;
-            font-size: 2rem;
-        }
-
-        footer p {
-            opacity: 0.95;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-
-        /* ===== DISCLAIMER ===== */
-        .disclaimer {
-            font-size: 0.95rem;
-            color: #f57c00;
-            font-style: italic;
-            margin: 25px 0;
-            padding: 20px;
-            background: #fff3e0;
-            border-radius: 10px;
-            border-left: 4px solid #ff9800;
-        }
-
-        /* ===== RESPONSIVE ===== */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero {
-                padding: 80px 0;
-                background-attachment: scroll;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.3rem;
-            }
-
-            .experience-layout,
-            .start-layout {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .current-price {
-                font-size: 3.5rem;
-            }
-
-            .cta-button {
-                padding: 20px 40px;
-                font-size: 1.3rem;
-            }
-
-            .modules {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                gap: 30px;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing {
-                background-attachment: scroll;
-            }
+            header h1 { font-size: 2rem; }
+            .experience-grid { grid-template-columns: 1fr; }
+            .pricing-box { padding: 20px; }
+            .price-new { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- ===== HERO COM FOTO 5 DE FUNDO ===== -->
-    <header class="hero">
-        <div class="container hero-content">
-            <h1>GUIA DE HIGIENIZAÇÃO</h1>
-            <p class="subtitle">TRANSFORME ESTOFADOS SUJOS EM UMA NOVA FONTE DE RENDA</p>
+
+    <!-- HERO SECTION -->
+    <header>
+        <div class="container">
+            <h1>Transforme Estofados Sujos em uma Nova Fonte de Renda</h1>
             <p>Aprenda a trabalhar com higienização de estofados e tenha o seu próprio negócio — mesmo começando do zero.</p>
-            <p>Você não precisa de uma loja, de uma equipe grande ou de um investimento enorme para começar. Com conhecimento, técnica, equipamentos adequados e uma estratégia comercial, você pode começar sozinho, atender clientes na casa deles e construir seu próprio negócio de higienização.</p>
-            <p><strong>E nós vamos te ensinar como fazer isso.</strong></p>
-            <a href="#pricing" class="cta-button">QUERO COMEÇAR AGORA</a>
+            <a href="https://pay.hotmart.com/O45369019T?off=a8af6vls" class="btn-cta">Quero Começar Agora</a>
         </div>
     </header>
 
-    <!-- ===== EXPERIÊNCIA COM FOTO 4 (POLIMENTO) ===== -->
-    <section>
-        <div class="container">
-            <h2>Mais de 10 Anos de Experiência no Mercado</h2>
-
-            <div class="experience-layout">
-                <img src="foto4.jpg" alt="Profissional realizando polimento técnico em sofá" class="experience-image">
-                <div>
-                    <div class="highlight-box">
-                        <p>Nosso método foi desenvolvido a partir de mais de 10 anos de experiência e milhares de alunos formados. Você vai aprender não apenas a limpar um sofá: vai aprender a montar, divulgar, vender e administrar um negócio.</p>
-                    </div>
-
-                    <h3>Quanto Você Poderia Faturar Com Esse Negócio?</h3>
-                    <p>Dependendo da sua cidade, preços praticados, quantidade de atendimentos e dedicação, é possível alcançar faturamentos de até <strong>R$ 10 mil por mês ou mais</strong>.</p>
-                    <p>Também temos relatos e depoimentos de alunos que chegaram a R$ 30 mil, R$ 40 mil ou mais de faturamento mensal em determinadas cidades.</p>
-                </div>
+    <!-- EXPERIENCE SECTION -->
+    <section class="container">
+        <div class="experience-grid">
+            <div class="experience-text">
+                <h2>Mais de 10 Anos de Experiência</h2>
+                <p>Nosso método foi desenvolvido a partir de mais de 10 anos de experiência e milhares de alunos formados. Você vai aprender não apenas a limpar um sofá: vai aprender a montar, divulgar, vender e administrar um negócio.</p>
+                <br>
+                <h3>Quanto você poderia faturar?</h3>
+                <p>É possível alcançar faturamentos de até <strong>R$ 10 mil por mês</strong> ou mais. Temos relatos de alunos que chegaram a R$ 30 mil e R$ 40 mil mensais.</p>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;"><em>*Resultados variam conforme dedicação e região.</em></p>
             </div>
-
-            <div class="disclaimer">
-                <em>Importante: os resultados não são garantidos e variam conforme região, experiência, preços, número de clientes e dedicação de cada profissional.</em>
+            <div class="experience-img">
+                <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO PELA SUA FOTO DE EXPERIÊNCIA -->
+                <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Profissional limpando sofá">
             </div>
-
-            <p style="text-align:center; font-size:1.15rem;">E existe algo que todos eles tiveram em comum: <strong>começaram aprendendo</strong>.</p>
         </div>
     </section>
 
-    <!-- ===== COMEÇAR SOZINHO COM FOTO 1 FLUTUANTE ===== -->
-    <section>
+    <!-- BENEFITS SECTION -->
+    <section class="benefits-section">
         <div class="container">
             <h2>Você Pode Começar Sozinho</h2>
-
-            <div class="start-layout">
-                <div>
-                    <ul class="check-list">
-                        <li>Trabalhar sozinho</li>
-                        <li>Atender na casa do cliente</li>
-                        <li>Começar com poucos equipamentos</li>
-                        <li>Trabalhar de forma autônoma</li>
-                        <li>Construir sua carteira de clientes aos poucos</li>
-                        <li>Reinvestir parte do faturamento no crescimento</li>
-                        <li>Transformar o serviço em um negócio próprio</li>
-                    </ul>
-                    <p class="highlight-box"><strong>Você não precisa esperar ter uma empresa enorme para começar. Você pode começar pequeno e crescer conforme os seus resultados.</strong></p>
+            <div class="benefits-grid">
+                <!-- Card 1 -->
+                <div class="benefit-card">
+                    <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                    <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Trabalhar sozinho">
+                    <h3>Autonomia Total</h3>
+                    <p>Trabalhe sozinho, seja seu próprio chefe e construa sua carteira de clientes aos poucos.</p>
                 </div>
-                <img src="foto1.jpg" alt="Profissional realizando limpeza detalhada em estofado" class="floating-image">
+                <!-- Card 2 -->
+                <div class="benefit-card">
+                    <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                    <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Atender na casa do cliente">
+                    <h3>Sem Loja Física</h3>
+                    <p>Atenda na casa do cliente. Não precisa alugar espaço nem investir em reforma.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="benefit-card">
+                    <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                    <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Poucos equipamentos">
+                    <h3>Baixo Investimento</h3>
+                    <p>Comece com poucos equipamentos e reinveste o lucro para crescer estruturado.</p>
+                </div>
             </div>
-
-            <h3>Um Investimento Que Pode Se Pagar Com os Primeiros Serviços</h3>
-            <p>A higienização de estofados pode ser iniciada com uma estrutura relativamente enxuta. Você aprende quais equipamentos realmente precisa, quais produtos utilizar, como fazer a diluição correta e como trabalhar com segurança.</p>
-            <p>Conforme conquistar clientes, o próprio faturamento pode ajudar a recuperar o investimento inicial e estruturar o crescimento do negócio.</p>
-
-            <h3>Não É Apenas Um Curso de Limpeza. É Um Curso Para Você Aprender a Criar Um Negócio.</h3>
-            <p>Porque saber higienizar um sofá é apenas uma parte. Você precisa saber como abrir a empresa, emitir nota fiscal, entender seu cliente, cobrar, conseguir clientes, divulgar, atender, fidelizar e administrar.</p>
-            <p><strong>É por isso que o Guia de Higienização vai muito além da técnica.</strong></p>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <ul class="check-list" style="display: inline-block; text-align: left;">
+                    <li>Trabalhar de forma autônoma</li>
+                    <li>Construir sua carteira de clientes aos poucos</li>
+                    <li>Reinvestir parte do faturamento no crescimento</li>
+                    <li>Transformar o serviço em um negócio próprio</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- ===== MÓDULOS ===== -->
-    <section>
-        <div class="container">
-            <h2>O Que Você Vai Aprender</h2>
-            <div class="modules">
-                <div class="module-card">
-                    <h4>MÓDULO 1 — COMO COMEÇAR SEU NEGÓCIO</h4>
+    <!-- MODULES SECTION -->
+    <section class="container">
+        <h2>O Que Você Vai Aprender</h2>
+        <div class="modules-grid">
+            <!-- Módulo 1 -->
+            <div class="module-card">
+                <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Módulo Negócio">
+                <div class="module-content">
+                    <h3>Módulo 1 — Como Começar Seu Negócio</h3>
                     <ul>
-                        <li>Como abrir seu CNPJ</li>
-                        <li>Como trabalhar de forma regularizada</li>
-                        <li>Como emitir nota fiscal</li>
-                        <li>Como registrar sua marca</li>
-                        <li>Noções sobre marcas e patentes</li>
+                        <li>Como abrir seu CNPJ e emitir nota fiscal</li>
                         <li>Como estudar o mercado da sua cidade</li>
-                        <li>Como identificar seu público e sua persona</li>
-                        <li>Como definir onde e para quem você vai vender</li>
+                        <li>Como identificar seu público e persona</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="module-card">
-                    <h4>MÓDULO 2 — POSICIONAMENTO E MARKETING</h4>
+            <!-- Módulo 2 -->
+            <div class="module-card">
+                <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Módulo Marketing">
+                <div class="module-content">
+                    <h3>Módulo 2 — Posicionamento e Marketing</h3>
                     <ul>
                         <li>Como se posicionar no Instagram</li>
-                        <li>Como divulgar seu trabalho</li>
-                        <li>Como utilizar o Google Ads para atrair clientes</li>
-                        <li>Como criar uma presença profissional na internet</li>
-                        <li>Como transformar divulgação em oportunidades de atendimento</li>
+                        <li>Google Ads para atrair clientes</li>
+                        <li>Criar presença profissional na internet</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="module-card">
-                    <h4>MÓDULO 3 — ATENDIMENTO E VENDAS</h4>
+            <!-- Módulo 3 -->
+            <div class="module-card">
+                <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Módulo Vendas">
+                <div class="module-content">
+                    <h3>Módulo 3 — Atendimento e Vendas</h3>
                     <ul>
-                        <li>Apresentação pessoal</li>
-                        <li>Como abordar o cliente</li>
-                        <li>Atendimento pelo WhatsApp</li>
-                        <li>Gestão da carteira de clientes</li>
-                        <li>Como fazer orçamentos</li>
-                        <li>Qualidade no atendimento</li>
-                        <li>Pós-venda</li>
-                        <li>Relacionamento, indicação e recompra</li>
+                        <li>Abordagem e atendimento pelo WhatsApp</li>
+                        <li>Como fazer orçamentos e fechar vendas</li>
+                        <li>Pós-venda e fidelização</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="module-card">
-                    <h4>MÓDULO 4 — EQUIPAMENTOS, PRODUTOS E SEGURANÇA</h4>
+            <!-- Módulo 4 -->
+            <div class="module-card">
+                <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Módulo Técnica">
+                <div class="module-content">
+                    <h3>Módulo 4 — Equipamentos e Técnica</h3>
                     <ul>
-                        <li>Equipamentos</li>
-                        <li>Funcionamento e utilização</li>
-                        <li>Limpeza e manutenção dos equipamentos</li>
-                        <li>Produtos utilizados na higienização</li>
-                        <li>Diluição correta</li>
-                        <li>Utilização de EPIs</li>
-                        <li>Cuidados durante a execução</li>
+                        <li>Uso correto de equipamentos e EPIs</li>
+                        <li>Diluição de produtos e química básica</li>
                         <li>Diferença entre lavagem a seco e higienização</li>
-                        <li>Tipos de tecidos e seus cuidados</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="module-card">
-                    <h4>MÓDULO 5 — AULAS PRÁTICAS</h4>
+            <!-- Módulo 5 -->
+            <div class="module-card">
+                <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Módulo Prática">
+                <div class="module-content">
+                    <h3>Módulo 5 — Aulas Práticas</h3>
                     <ul>
-                        <li><strong>Sofás:</strong> higienização de sofá; atendimento na casa do cliente; couro; linho; tecidos neutros e tecidos naturais</li>
-                        <li><strong>Veículos:</strong> higienização interna e cuidados com diferentes superfícies</li>
-                        <li><strong>Tapetes:</strong> fibras e cerdas naturais, tapetes persas e similares e tapetes de couro</li>
-                        <li><strong>Outros serviços:</strong> colchões, cadeiras, remoção de odores e como lidar com xixi de pets</li>
+                        <li>Sofás (tecidos, couro, linho)</li>
+                        <li>Veículos, Tapetes e Cortinas</li>
+                        <li>Remoção de odores e xixi de pets</li>
                     </ul>
                 </div>
-
-                <div class="module-card">
-                    <h4>APRENDA A COBRAR PELO SEU TRABALHO</h4>
+            </div>
+             <!-- Módulo 6 -->
+             <div class="module-card">
+                <!-- SUBSTITUA O NOME DA IMAGEM ABAIXO -->
+                <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Módulo Precificação">
+                <div class="module-content">
+                    <h3>Bônus — Precificação</h3>
                     <ul>
-                        <li>Orçamentos</li>
-                        <li>Rendimento dos produtos</li>
-                        <li>Cálculo de custos</li>
-                        <li>Utilização dos produtos</li>
-                        <li>Organização do serviço</li>
+                        <li>Cálculo de custos e rendimento</li>
                         <li>Formação do preço do atendimento</li>
+                        <li>Organização financeira do serviço</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CERTIFICAÇÃO ===== -->
-    <section>
-        <div class="container">
+    <!-- CERTIFICATION & SUPPORT -->
+    <section style="background-color: var(--light-blue);">
+        <div class="container" style="text-align: center;">
             <h2>Certificação e Suporte</h2>
-
-            <h3>Certificação</h3>
-            <p>Ao concluir o treinamento, você recebe seu certificado de conclusão, comprovando sua formação no Guia de Higienização.</p>
-
-            <h3>Suporte Por 1 Ano Pelo WhatsApp</h3>
-            <p>E você não fica sozinho depois de concluir o curso. Durante 1 ano, você terá suporte através do WhatsApp para tirar dúvidas e receber orientação relacionada ao conteúdo e à aplicação do que aprendeu.</p>
-            <p><strong>Você aprende e ainda conta com uma equipe para te ajudar durante sua jornada.</strong></p>
-        </div>
-    </section>
-
-    <!-- ===== GALERIA DE ALUNOS COM FOTOS 2 E 3 ===== -->
-    <section>
-        <div class="container">
-            <h2>Milhares de Alunos Já Foram Formados</h2>
-            <p style="text-align:center; max-width:800px; margin:0 auto;">Ao longo de mais de 10 anos de experiência, ajudamos milhares de pessoas a aprender essa profissão e dar os primeiros passos no mercado.</p>
-            <p style="text-align:center; max-width:800px; margin:0 auto;">Alguns começaram como renda extra. Outros começaram trabalhando sozinhos. E muitos transformaram a higienização em sua principal atividade profissional.</p>
-
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="foto2.jpg" alt="Aplicação de produto em sofá">
-                    <div class="gallery-overlay">
-                        <h4>Aplicação Técnica</h4>
-                        <p>Produtos específicos para cada tipo de tecido</p>
-                    </div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 30px;">
+                <div style="flex: 1; min-width: 300px; max-width: 500px;">
+                    <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Certificado" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="margin-top: 20px;">Certificado Incluso</h3>
+                    <p>Ao concluir o treinamento, receba seu certificado de conclusão comprovando sua formação.</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="foto3.jpg" alt="Extração profunda em cadeira estofada">
-                    <div class="gallery-overlay">
-                        <h4>Extração Profunda</h4>
-                        <p>Remoção completa de sujeira e ácaros</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="foto4.jpg" alt="Polimento e acabamento profissional">
-                    <div class="gallery-overlay">
-                        <h4>Acabamento Profissional</h4>
-                        <p>Resultado impecável em cada atendimento</p>
-                    </div>
+                <div style="flex: 1; min-width: 300px; max-width: 500px;">
+                    <img src="https://raw.githubusercontent.com/diogockbarcellos-arch/higieniza-o-de-estofados/main/COLOQUE_O_NOME_DA_FOTO_AQUI.jpg" alt="Suporte WhatsApp" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="margin-top: 20px;">Suporte por 1 Ano</h3>
+                    <p>Tire dúvidas e receba orientação via WhatsApp durante 1 ano inteiro após a compra.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
-    <section>
+    <!-- PRICING SECTION -->
+    <section class="pricing-section">
         <div class="container">
-            <h2>Agora É a Sua Vez de Começar</h2>
-            <p>Você pode continuar pensando: <em>"Será que eu consigo?"</em> Ou pode começar a aprender uma profissão que permite trabalhar com uma estrutura enxuta e construir seu próprio negócio.</p>
-            <p>Você não precisa começar com uma equipe. Não precisa alugar uma loja. Não precisa esperar anos para começar.</p>
-            <p><strong>Você pode começar com você. Aprender. Conseguir os primeiros clientes. Fazer os primeiros atendimentos. Reinvestir. E crescer.</strong></p>
-        </div>
-    </section>
-
-    <!-- ===== PREÇO COM FOTO 3 DE FUNDO SUTIL ===== -->
-    <section id="pricing" class="pricing">
-        <div class="container pricing-content">
-            <h2>Investimento</h2>
-            <div class="price-box">
-                <p class="old-price">DE R$ 597 POR APENAS:</p>
-                <div class="current-price">
-                    <small>R$</small> 597
-                </div>
-                <div class="payment-type">PAGAMENTO ÚNICO</div>
-
-                <p>Você recebe acesso ao treinamento completo, com conteúdo profissional, aulas práticas, técnicas de higienização, equipamentos, produtos, atendimento, vendas e estratégias para começar seu negócio.</p>
-
-                <ul class="benefits-list check-list">
+            <div class="pricing-box">
+                <h3>Investimento Único</h3>
+                <p class="price-old">De R$ 597,00</p>
+                <p class="price-new">R$ 597</p>
+                <p>Pagamento Único</p>
+                
+                <ul class="features-list">
                     <li>Curso completo de higienização de estofados</li>
-                    <li>Conteúdo técnico e aulas práticas</li>
-                    <li>Técnicas para sofás, veículos, tapetes, colchões e cadeiras</li>
-                    <li>Técnicas para couro e tecidos naturais</li>
-                    <li>Remoção de xixi de pets</li>
-                    <li>Equipamentos, produtos, diluição e EPIs</li>
-                    <li>Atendimento, vendas, WhatsApp e gestão de carteira</li>
-                    <li>Instagram e Google Ads</li>
-                    <li>CNPJ e nota fiscal</li>
-                    <li>Posicionamento e estratégias para começar</li>
-                    <li>Certificação</li>
-                    <li>Suporte por WhatsApp durante 1 ano</li>
+                    <li>Técnicas para sofás, veículos, tapetes e couro</li>
+                    <li>Módulo de negócios, marketing e vendas</li>
+                    <li>Suporte exclusivo por WhatsApp (1 ano)</li>
+                    <li>Certificado de conclusão</li>
                 </ul>
 
-                <a href="#" class="cta-button">QUERO COMEÇAR AGORA</a>
-
-                <p><strong>R$ 597 PODE SER O PRIMEIRO PASSO PARA O SEU NOVO NEGÓCIO.</strong></p>
-                <p>Pense quanto custaria abrir uma loja física: aluguel, reforma, móveis, funcionários, estoque e contas. Na higienização de estofados, você pode começar com uma estrutura muito mais enxuta e atender onde o cliente está.</p>
-                <p><strong>E o conhecimento fica com você.</strong></p>
+                <a href="https://pay.hotmart.com/O45369019T?off=a8af6vls" class="btn-cta" style="width: 100%;">Quero Começar Meu Negócio</a>
+                <p style="margin-top: 15px; font-size: 0.9rem;">Acesso imediato após a confirmação.</p>
             </div>
         </div>
     </section>
 
-    <!-- ===== CTA FINAL ===== -->
-    <section>
-        <div class="container">
-            <h2>Não Deixe Para Depois</h2>
-            <p>Se você estava procurando uma forma de começar um negócio próprio, trabalhar por conta própria ou criar uma nova fonte de renda, talvez esse seja o momento de dar o primeiro passo.</p>
-            <p>Aprenda uma profissão. Aprenda a vender. Aprenda a atender. Aprenda a administrar. E comece a construir o seu próprio negócio.</p>
-
-            <div style="text-align: center; margin: 40px 0;">
-                <h3>QUERO APRENDER HIGIENIZAÇÃO DE ESTOFADOS</h3>
-                <p>CLIQUE NO BOTÃO ABAIXO E GARANTA SUA VAGA POR R$ 597</p>
-                <a href="#" class="cta-button">[ QUERO COMEÇAR AGORA ]</a>
-            </div>
+    <!-- FAQ SECTION -->
+    <section class="container">
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Preciso ter experiência? <span>+</span></div>
+            <div class="faq-answer">Não. O treinamento foi pensado para quem está começando do zero e também para quem quer se aperfeiçoar.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Preciso contratar alguém para começar? <span>+</span></div>
+            <div class="faq-answer">Não necessariamente. Você pode começar com uma estrutura enxuta e realizar os primeiros atendimentos sozinho.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Preciso ter uma loja? <span>+</span></div>
+            <div class="faq-answer">Não. O modelo permite atender o cliente no local, reduzindo a necessidade de uma estrutura física.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Quanto posso ganhar? <span>+</span></div>
+            <div class="faq-answer">Depende da sua dedicação e região. Existem alunos faturando de R$ 10 mil a R$ 40 mil+, mas resultados não são garantidos.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div class="faq-question">Tenho suporte depois do curso? <span>+</span></div>
+            <div class="faq-answer">Sim! Você terá suporte pelo WhatsApp durante 1 ano inteiro.</div>
         </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
-    <section>
-        <div class="container">
-            <h2>Perguntas Frequentes</h2>
-
-            <div class="faq-item">
-                <div class="faq-question">Preciso ter experiência?</div>
-                <div class="faq-answer">Não. O treinamento foi pensado para quem está começando e também para quem já trabalha na área e quer aperfeiçoar seus conhecimentos.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Preciso contratar alguém para começar?</div>
-                <div class="faq-answer">Não necessariamente. Você pode começar com uma estrutura enxuta e realizar os primeiros atendimentos sozinho, conforme sua capacidade e organização.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Preciso ter uma loja?</div>
-                <div class="faq-answer">Não. O modelo permite atender o cliente no local, reduzindo a necessidade de uma estrutura física tradicional.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Quanto posso ganhar?</div>
-                <div class="faq-answer">Depende da cidade, preços, quantidade de atendimentos, custos e dedicação. Existem alunos que relatam faturamentos de R$ 10 mil, R$ 30 mil, R$ 40 mil ou mais por mês, mas esses resultados não são garantidos.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">O curso ensina somente a higienização?</div>
-                <div class="faq-answer">Não. Você aprende estruturação do negócio, marketing, atendimento, vendas, equipamentos, produtos, técnicas e aulas práticas.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Recebo certificado?</div>
-                <div class="faq-answer">Sim. Ao concluir o treinamento, você recebe a certificação de conclusão.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Tenho suporte depois do curso?</div>
-                <div class="faq-answer">Sim. Você terá suporte pelo WhatsApp durante 1 ano.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Quanto custa?</div>
-                <div class="faq-answer">O investimento é de R$ 597, em pagamento único.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <h3>SUA NOVA PROFISSÃO PODE COMEÇAR COM UMA DECISÃO</h3>
-            <p style="font-size: 1.5rem; font-weight: 700; margin: 20px 0;">APRENDA. COMECE. ATENDA. CRESÇA.</p>
-
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Anos de Experiência</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">Milhares</div>
-                    <div class="stat-label">Alunos Formados</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Método Completo</div>
-                </div>
-            </div>
-
-            <p>Um método completo para quem quer entrar no mercado.</p>
-            <a href="#pricing" class="cta-button" style="margin-top: 30px;">[ QUERO COMEÇAR MEU NEGÓCIO AGORA ]</a>
+            <h2>Sua Nova Profissão Começa Aqui</h2>
+            <p>Mais de 10 anos de experiência. Milhares de alunos formados.</p>
+            <br>
+            <a href="https://pay.hotmart.com/O45369019T?off=a8af6vls" class="btn-cta">Garantir Minha Vaga Agora</a>
+            <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7;">&copy; 2023 Guia de Higienização. Todos os direitos reservados.</p>
         </div>
     </footer>
+
 </body>
 </html>
