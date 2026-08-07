@@ -33,26 +33,37 @@
             padding: 0 20px;
         }
 
-        /* HERO SECTION - COM FOTO DE FUNDO E TOM AZULADO */
+        /* HERO SECTION - CORRIGIDO PARA CELULAR */
         header {
-            /* Camada azulada sobre a foto.1.jpg */
-            background-image: linear-gradient(rgba(0, 60, 120, 0.75), rgba(0, 86, 179, 0.6)), url('foto.1.jpg');
-            background-size: cover;       /* Cobre toda a área sem distorcer */
-            background-position: center;  /* Centraliza a imagem (crucial para celular) */
+            /* Garante que a imagem cubra tudo sem distorcer */
+            background-image: linear-gradient(rgba(0, 50, 100, 0.7), rgba(0, 86, 179, 0.6)), url('foto.1.jpg');
+            background-size: cover;       /* Cobre toda a área */
+            background-position: center;  /* Centraliza a foto (importante para celular) */
             background-repeat: no-repeat;
-            background-attachment: scroll;
             
             color: white;
             text-align: center;
-            padding: 120px 20px;
+            padding: 100px 20px;
             
-            /* Garante altura mínima para a foto aparecer bem no celular */
-            min-height: 85vh; 
+            /* Garante altura mínima para a foto aparecer no celular */
+            min-height: 80vh; 
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             width: 100%;
+            overflow: hidden;
+        }
+
+        /* Ajuste específico para telas muito pequenas (celulares antigos) */
+        @media (max-width: 480px) {
+            header {
+                min-height: 70vh; /* Altura suficiente para mostrar a foto e o texto */
+                background-position: center 30%; /* Ajusta o foco da imagem um pouco mais para cima no mobile */
+            }
+            header h1 {
+                font-size: 1.8rem; /* Texto um pouco menor para caber melhor */
+            }
         }
 
         header h1 {
@@ -60,7 +71,7 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 700;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             line-height: 1.2;
         }
 
@@ -71,7 +82,6 @@
             margin-left: auto;
             margin-right: auto;
             font-weight: 300;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
         .btn-cta {
@@ -134,7 +144,6 @@
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0,86,179,0.15);
             transition: transform 0.3s;
-            object-fit: cover;
         }
         
         .experience-img img:hover {
@@ -257,18 +266,25 @@
             background: var(--accent-green);
         }
 
-        .price-old {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.3rem;
+        .price-installments {
+            font-size: 1.4rem;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
 
         .price-new {
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-weight: 800;
             color: var(--accent-green);
             margin: 10px 0;
             line-height: 1;
+        }
+
+        .price-details {
+            color: #777;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         .features-list {
@@ -358,28 +374,19 @@
             padding: 60px 20px;
         }
 
-        /* RESPONSIVE MOBILE */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            header p { font-size: 1.1rem; }
-            
+            header h1 { font-size: 2.2rem; }
             .experience-grid { grid-template-columns: 1fr; }
-            
             .pricing-box { padding: 30px 20px; }
-            .price-new { font-size: 3rem; }
-            
-            .btn-cta { 
-                width: 100%; 
-                padding: 15px 20px; 
-                font-size: 1rem; 
-                box-sizing: border-box;
-            }
+            .price-new { font-size: 3.5rem; }
+            .btn-cta { width: 100%; padding: 15px 20px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO SECTION (Fundo: foto.1.jpg) -->
+    <!-- HERO SECTION -->
     <header>
         <div class="container">
             <h1>Transforme Estofados Sujos em uma Nova Fonte de Renda</h1>
@@ -388,7 +395,7 @@
         </div>
     </header>
 
-    <!-- EXPERIENCE SECTION (Foto: foto.2.jpg) -->
+    <!-- EXPERIENCE SECTION -->
     <section class="container">
         <div class="experience-grid">
             <div class="experience-text">
@@ -405,7 +412,7 @@
         </div>
     </section>
 
-    <!-- BENEFITS SECTION (Fotos: foto.3, foto.4, foto.5) -->
+    <!-- BENEFITS SECTION -->
     <section class="benefits-section">
         <div class="container">
             <h2>Você Pode Começar Sozinho</h2>
@@ -447,7 +454,7 @@
         </div>
     </section>
 
-    <!-- MODULES SECTION (Destaque com foto.6.jpg) -->
+    <!-- MODULES SECTION -->
     <section class="container">
         <h2>O Que Você Vai Aprender</h2>
         <div class="modules-grid">
@@ -475,7 +482,7 @@
                 </div>
             </div>
 
-            <!-- Módulo 3 (Com Foto 6) -->
+            <!-- Módulo 3 -->
             <div class="module-card">
                 <img src="foto.6.jpg" alt="Módulo Vendas e Atendimento">
                 <div class="module-content">
@@ -550,10 +557,10 @@
     <section class="pricing-section">
         <div class="container">
             <div class="pricing-box">
-                <h3>Investimento Único</h3>
-                <p class="price-old">De R$ 597,00</p>
-                <p class="price-new">R$ 597</p>
-                <p style="color: #666; font-weight: 600;">PAGAMENTO ÚNICO</p>
+                <h3>Investimento Acessível</h3>
+                <p class="price-installments">Em até 5x de</p>
+                <p class="price-new">R$ 119,40</p>
+                <p class="price-details">ou R$ 597,00 à vista</p>
                 
                 <ul class="features-list">
                     <li>Curso completo de higienização de estofados</li>
@@ -595,7 +602,7 @@
             </div>
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">Quanto custa? <span>+</span></div>
-                <div class="faq-answer">O investimento é de apenas R$ 597,00 em pagamento único. Sem mensalidades.</div>
+                <div class="faq-answer">O investimento é de apenas 5x de R$ 119,40 no cartão de crédito. Um valor que cabe no bolso e pode se pagar com os primeiros atendimentos.</div>
             </div>
         </div>
     </section>
