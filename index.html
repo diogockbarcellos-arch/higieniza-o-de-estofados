@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Higienização - Profissão e Renda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Guia de Higienização - Transforme Estofados em Renda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Paleta de Cores: Limpeza, Água e Frescor */
-            --primary-blue: #0077b6;       /* Azul Oceano */
-            --dark-blue: #023e8a;          /* Azul Profundo */
-            --light-blue: #caf0f8;         /* Azul Gelo (Fundo) */
+            --primary-blue: #0056b3;
+            --light-blue: #e3f2fd;
+            --accent-green: #28a745;
+            --text-dark: #333;
             --white: #ffffff;
-            --accent-green: #2ec4b6;       /* Verde Água (Ação/Limpeza) */
-            --text-gray: #4a5568;
         }
 
         * {
@@ -25,8 +23,8 @@
 
         body {
             background-color: var(--white);
-            color: var(--text-gray);
-            line-height: 1.7;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
         .container {
@@ -35,90 +33,86 @@
             padding: 0 20px;
         }
 
-        /* HERO SECTION COM FOTO DE FUNDO */
+        /* HERO SECTION - COM FOTO DE FUNDO E TOM AZULADO */
         header {
-            /* AQUI ESTÁ A FOTO 1 COMO FUNDO */
-            background-image: linear-gradient(rgba(2, 62, 138, 0.7), rgba(0, 119, 182, 0.6)), url('foto.1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Efeito parallax suave */
-            color: var(--white);
+            /* Camada azulada sobre a foto.1.jpg */
+            background-image: linear-gradient(rgba(0, 60, 120, 0.75), rgba(0, 86, 179, 0.6)), url('foto.1.jpg');
+            background-size: cover;       /* Cobre toda a área sem distorcer */
+            background-position: center;  /* Centraliza a imagem (crucial para celular) */
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            
+            color: white;
             text-align: center;
-            padding: 140px 20px;
-            min-height: 85vh;
+            padding: 120px 20px;
+            
+            /* Garante altura mínima para a foto aparecer bem no celular */
+            min-height: 85vh; 
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            position: relative;
+            width: 100%;
         }
 
         header h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
             line-height: 1.2;
         }
 
         header p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 40px;
             max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
             font-weight: 300;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
         .btn-cta {
             background-color: var(--accent-green);
-            color: var(--white);
-            padding: 22px 60px;
+            color: white;
+            padding: 20px 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: bold;
             font-size: 1.2rem;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: inline-block;
             text-transform: uppercase;
-            box-shadow: 0 10px 20px rgba(46, 196, 182, 0.4);
-            border: 2px solid transparent;
-            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            animation: pulse 2s infinite;
+            border: 2px solid white;
         }
 
         .btn-cta:hover {
-            transform: translateY(-5px);
-            background-color: #20a093;
-            box-shadow: 0 15px 25px rgba(46, 196, 182, 0.6);
-            border-color: var(--white);
+            transform: scale(1.05);
+            background-color: #218838;
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
         }
 
         /* SECTIONS GENERAL */
         section {
-            padding: 90px 0;
+            padding: 80px 0;
         }
 
         h2 {
-            color: var(--dark-blue);
+            color: var(--primary-blue);
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
             font-weight: 700;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-green);
-            margin: 15px auto 0;
-            border-radius: 2px;
         }
 
         h3 {
@@ -131,84 +125,75 @@
         .experience-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
 
         .experience-img img {
             width: 100%;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 119, 182, 0.15);
-            transition: transform 0.4s ease;
+            box-shadow: 0 15px 30px rgba(0,86,179,0.15);
+            transition: transform 0.3s;
             object-fit: cover;
-            height: 400px;
         }
         
         .experience-img img:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         /* BENEFITS SECTION */
         .benefits-section {
             background-color: var(--light-blue);
-            background-image: radial-gradient(#ffffff 20%, transparent 20%), radial-gradient(#ffffff 20%, transparent 20%);
-            background-position: 0 0, 50px 50px;
-            background-size: 100px 100px;
-            opacity: 1;
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
 
         .benefit-card {
-            background: var(--white);
-            border-radius: 25px;
+            background: white;
+            padding: 0;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.8);
         }
 
         .benefit-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 119, 182, 0.15);
         }
 
         .benefit-card img {
             width: 100%;
-            height: 240px;
+            height: 220px;
             object-fit: cover;
         }
 
         .benefit-content {
-            padding: 30px;
-            text-align: center;
+            padding: 25px;
         }
 
         /* MODULES SECTION */
         .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .module-card {
-            background: var(--white);
+            border: none;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
         }
 
         .module-card:hover {
-            border-color: var(--accent-green);
-            box-shadow: 0 15px 30px rgba(0, 119, 182, 0.1);
+            transform: translateY(-5px);
         }
 
         .module-card img {
@@ -219,9 +204,6 @@
 
         .module-content {
             padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
         }
 
         .module-content ul {
@@ -230,10 +212,10 @@
         }
 
         .module-content li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-size: 0.95rem;
-            color: #666;
-            padding-left: 25px;
+            color: #555;
+            padding-left: 20px;
             position: relative;
         }
 
@@ -242,96 +224,75 @@
             color: var(--accent-green);
             position: absolute;
             left: 0;
-            font-weight: 700;
+            font-weight: bold;
         }
 
         /* PRICING SECTION */
         .pricing-section {
-            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
-            color: var(--white);
+            background: linear-gradient(135deg, var(--primary-blue), #003d80);
+            color: white;
             text-align: center;
             padding: 100px 20px;
+        }
+
+        .pricing-box {
+            background: white;
+            color: var(--text-dark);
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
         }
 
-        /* Elementos decorativos de fundo */
-        .pricing-section::before {
-            content: '✨';
+        .pricing-box::before {
+            content: '';
             position: absolute;
-            top: 20px;
-            left: 10%;
-            font-size: 3rem;
-            opacity: 0.2;
-        }
-        .pricing-section::after {
-            content: '💧';
-            position: absolute;
-            bottom: 20px;
-            right: 10%;
-            font-size: 4rem;
-            opacity: 0.2;
-        }
-
-        .pricing-box {
-            background: var(--white);
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            border-radius: 30px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--accent-green);
         }
 
         .price-old {
             text-decoration: line-through;
             color: #999;
-            font-size: 1.4rem;
-            font-weight: 500;
+            font-size: 1.3rem;
         }
 
         .price-new {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 800;
-            color: var(--primary-blue);
+            color: var(--accent-green);
             margin: 10px 0;
             line-height: 1;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
 
         .features-list {
             text-align: left;
             margin: 40px 0;
-            background: #f0f8ff; /* AliceBlue */
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #dbeafe;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
         }
 
         .features-list li {
-            margin-bottom: 18px;
-            padding-left: 35px;
+            margin-bottom: 15px;
+            padding-left: 30px;
             position: relative;
-            font-weight: 600;
-            color: var(--dark-blue);
-            font-size: 1.05rem;
+            font-weight: 500;
         }
 
         .features-list li::before {
             content: '✓';
-            background: var(--accent-green);
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 24px;
+            color: var(--accent-green);
             position: absolute;
             left: 0;
-            font-size: 0.8rem;
             font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* FAQ SECTION */
@@ -341,34 +302,33 @@
         }
 
         .faq-item {
-            background: var(--white);
-            border: 1px solid #e2e8f0;
+            background: white;
+            border: 1px solid #eee;
             padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .faq-item:hover {
-            border-color: var(--primary-blue);
-            box-shadow: 0 10px 15px rgba(0, 119, 182, 0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--light-blue);
         }
 
         .faq-question {
             font-weight: 700;
-            color: var(--dark-blue);
+            color: var(--primary-blue);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
         }
 
         .faq-question span {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--accent-green);
-            transition: transform 0.3s;
         }
 
         .faq-answer {
@@ -376,48 +336,50 @@
             display: none;
             color: #555;
             line-height: 1.8;
-            border-top: 1px solid #f0f4f8;
+            border-top: 1px solid #f0f0f0;
             padding-top: 15px;
-            font-size: 0.95rem;
         }
 
         .faq-item.active .faq-answer {
             display: block;
-            animation: slideDown 0.4s ease;
-        }
-        
-        .faq-item.active .faq-question span {
-            transform: rotate(45deg);
+            animation: fadeIn 0.5s;
         }
 
-        @keyframes slideDown {
+        @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* FOOTER */
         footer {
-            background-color: var(--dark-blue);
-            color: var(--white);
+            background-color: #1a1a1a;
+            color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE MOBILE */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
+            header h1 { font-size: 2rem; }
             header p { font-size: 1.1rem; }
+            
             .experience-grid { grid-template-columns: 1fr; }
-            .pricing-box { padding: 40px 20px; }
-            .price-new { font-size: 3.5rem; }
-            .btn-cta { width: 100%; padding: 18px 20px; font-size: 1.1rem; }
-            .features-list { padding: 25px; }
+            
+            .pricing-box { padding: 30px 20px; }
+            .price-new { font-size: 3rem; }
+            
+            .btn-cta { 
+                width: 100%; 
+                padding: 15px 20px; 
+                font-size: 1rem; 
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Fundo: foto.1.jpg) -->
     <header>
         <div class="container">
             <h1>Transforme Estofados Sujos em uma Nova Fonte de Renda</h1>
@@ -426,7 +388,7 @@
         </div>
     </header>
 
-    <!-- EXPERIENCE SECTION (FOTO 2) -->
+    <!-- EXPERIENCE SECTION (Foto: foto.2.jpg) -->
     <section class="container">
         <div class="experience-grid">
             <div class="experience-text">
@@ -435,24 +397,22 @@
                 <br>
                 <h3>Quanto você poderia faturar?</h3>
                 <p>É possível alcançar faturamentos de até <strong>R$ 10 mil por mês</strong> ou mais. Temos relatos de alunos que chegaram a R$ 30 mil e R$ 40 mil mensais.</p>
-                <p style="font-size: 0.9rem; color: #777; margin-top: 10px;"><em>*Resultados variam conforme dedicação e região.</em></p>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;"><em>*Resultados variam conforme dedicação e região.</em></p>
             </div>
             <div class="experience-img">
-                <!-- FOTO 2 -->
-                <img src="foto.2.jpg" alt="Profissional limpando sofá com equipamento">
+                <img src="foto.2.jpg" alt="Profissional limpando sofá">
             </div>
         </div>
     </section>
 
-    <!-- BENEFITS SECTION (FOTO 3 e 4) -->
+    <!-- BENEFITS SECTION (Fotos: foto.3, foto.4, foto.5) -->
     <section class="benefits-section">
         <div class="container">
             <h2>Você Pode Começar Sozinho</h2>
             <div class="benefits-grid">
                 <!-- Card 1 -->
                 <div class="benefit-card">
-                    <!-- FOTO 3 -->
-                    <img src="foto.3.jpg" alt="Trabalhar sozinho com autonomia">
+                    <img src="foto.3.jpg" alt="Trabalhar sozinho">
                     <div class="benefit-content">
                         <h3>Autonomia Total</h3>
                         <p>Trabalhe sozinho, seja seu próprio chefe e construa sua carteira de clientes aos poucos.</p>
@@ -460,41 +420,45 @@
                 </div>
                 <!-- Card 2 -->
                 <div class="benefit-card">
-                    <!-- FOTO 4 -->
-                    <img src="foto.4.jpg" alt="Atendimento na casa do cliente">
+                    <img src="foto.4.jpg" alt="Atender na casa do cliente">
                     <div class="benefit-content">
                         <h3>Sem Loja Física</h3>
                         <p>Atenda na casa do cliente. Não precisa alugar espaço nem investir em reforma.</p>
                     </div>
                 </div>
-                <!-- Card 3 (Sem foto específica, usa ícone/texto ou repetição se preferir, mas deixei clean) -->
-                <div class="benefit-card" style="background: linear-gradient(135deg, #e3f2fd, #ffffff); display:flex; align-items:center; justify-content:center;">
+                <!-- Card 3 -->
+                <div class="benefit-card">
+                    <img src="foto.5.jpg" alt="Poucos equipamentos">
                     <div class="benefit-content">
-                        <h3 style="font-size: 1.5rem; color: var(--primary-blue);">Baixo Investimento 💰</h3>
+                        <h3>Baixo Investimento</h3>
                         <p>Comece com poucos equipamentos e reinveste o lucro para crescer estruturado.</p>
-                        <ul class="check-list" style="list-style: none; margin-top: 15px; text-align: left; display: inline-block;">
-                            <li style="margin-bottom: 8px;">✓ Equipamentos essenciais</li>
-                            <li style="margin-bottom: 8px;">✓ Produtos econômicos</li>
-                            <li>✓ Retorno rápido</li>
-                        </ul>
                     </div>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <ul class="check-list" style="display: inline-block; text-align: left; font-size: 1.1rem;">
+                    <li style="margin-bottom: 10px;">✓ Trabalhar de forma autônoma</li>
+                    <li style="margin-bottom: 10px;">✓ Construir sua carteira de clientes aos poucos</li>
+                    <li style="margin-bottom: 10px;">✓ Reinvestir parte do faturamento no crescimento</li>
+                    <li style="margin-bottom: 10px;">✓ Transformar o serviço em um negócio próprio</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- MODULES SECTION (FOTO 5 e 6) -->
+    <!-- MODULES SECTION (Destaque com foto.6.jpg) -->
     <section class="container">
         <h2>O Que Você Vai Aprender</h2>
         <div class="modules-grid">
             <!-- Módulo 1 -->
             <div class="module-card">
                 <div class="module-content">
-                    <h3>Módulo 1 — Negócio</h3>
+                    <h3>Módulo 1 — Como Começar Seu Negócio</h3>
                     <ul>
-                        <li>Como abrir seu CNPJ</li>
-                        <li>Emitir nota fiscal</li>
-                        <li>Estudar o mercado local</li>
+                        <li>Como abrir seu CNPJ e emitir nota fiscal</li>
+                        <li>Como estudar o mercado da sua cidade</li>
+                        <li>Como identificar seu público e persona</li>
                     </ul>
                 </div>
             </div>
@@ -502,25 +466,24 @@
             <!-- Módulo 2 -->
             <div class="module-card">
                 <div class="module-content">
-                    <h3>Módulo 2 — Marketing</h3>
+                    <h3>Módulo 2 — Posicionamento e Marketing</h3>
                     <ul>
-                        <li>Posicionamento no Instagram</li>
-                        <li>Google Ads para clientes</li>
-                        <li>Presença profissional online</li>
+                        <li>Como se posicionar no Instagram</li>
+                        <li>Google Ads para atrair clientes</li>
+                        <li>Criar presença profissional na internet</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Módulo 3 (COM FOTO 5) -->
+            <!-- Módulo 3 (Com Foto 6) -->
             <div class="module-card">
-                <!-- FOTO 5 -->
-                <img src="foto.5.jpg" alt="Atendimento e Vendas">
+                <img src="foto.6.jpg" alt="Módulo Vendas e Atendimento">
                 <div class="module-content">
-                    <h3>Módulo 3 — Vendas</h3>
+                    <h3>Módulo 3 — Atendimento e Vendas</h3>
                     <ul>
-                        <li>Abordagem pelo WhatsApp</li>
-                        <li>Orçamentos assertivos</li>
-                        <li>Fidelização de clientes</li>
+                        <li>Abordagem e atendimento pelo WhatsApp</li>
+                        <li>Como fazer orçamentos e fechar vendas</li>
+                        <li>Pós-venda e fidelização</li>
                     </ul>
                 </div>
             </div>
@@ -528,37 +491,34 @@
             <!-- Módulo 4 -->
             <div class="module-card">
                 <div class="module-content">
-                    <h3>Módulo 4 — Técnica</h3>
+                    <h3>Módulo 4 — Equipamentos e Técnica</h3>
                     <ul>
-                        <li>Uso de equipamentos e EPIs</li>
-                        <li>Diluição correta de produtos</li>
-                        <li>Lavagem a seco vs. Higienização</li>
+                        <li>Uso correto de equipamentos e EPIs</li>
+                        <li>Diluição de produtos e química básica</li>
+                        <li>Diferença entre lavagem a seco e higienização</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Módulo 5 (COM FOTO 6) -->
+            <!-- Módulo 5 -->
             <div class="module-card">
-                <!-- FOTO 6 -->
-                <img src="foto.6.jpg" alt="Aulas Práticas de Higienização">
                 <div class="module-content">
-                    <h3>Módulo 5 — Prática</h3>
+                    <h3>Módulo 5 — Aulas Práticas</h3>
                     <ul>
-                        <li>Sofás, Couro e Tecidos</li>
-                        <li>Veículos e Tapetes</li>
-                        <li>Remoção de odores e pets</li>
+                        <li>Sofás (tecidos, couro, linho)</li>
+                        <li>Veículos, Tapetes e Cortinas</li>
+                        <li>Remoção de odores e xixi de pets</li>
                     </ul>
                 </div>
             </div>
-            
              <!-- Módulo 6 -->
              <div class="module-card">
                 <div class="module-content">
                     <h3>Bônus — Precificação</h3>
                     <ul>
-                        <li>Cálculo de custos</li>
-                        <li>Formação de preço</li>
-                        <li>Gestão financeira</li>
+                        <li>Cálculo de custos e rendimento</li>
+                        <li>Formação do preço do atendimento</li>
+                        <li>Organização financeira do serviço</li>
                     </ul>
                 </div>
             </div>
@@ -566,20 +526,20 @@
     </section>
 
     <!-- CERTIFICATION & SUPPORT -->
-    <section style="background-color: #f0f9ff;">
+    <section style="background-color: var(--light-blue);">
         <div class="container" style="text-align: center;">
             <h2>Certificação e Suporte</h2>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 30px;">
                 <div style="flex: 1; min-width: 300px; max-width: 500px;">
-                    <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 5px solid var(--accent-green);">
-                        <h3 style="font-size: 1.5rem; color: var(--primary-blue);">🎓 Certificado Incluso</h3>
-                        <p style="margin-top: 15px;">Ao concluir o treinamento, receba seu certificado de conclusão comprovando sua formação profissional.</p>
+                    <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--accent-green);">🎓 Certificado Incluso</h3>
+                        <p>Ao concluir o treinamento, receba seu certificado de conclusão comprovando sua formação.</p>
                     </div>
                 </div>
                 <div style="flex: 1; min-width: 300px; max-width: 500px;">
-                    <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-blue);">
-                        <h3 style="font-size: 1.5rem; color: var(--primary-blue);">📱 Suporte por 1 Ano</h3>
-                        <p style="margin-top: 15px;">Tire dúvidas e receba orientação via WhatsApp durante 1 ano inteiro após a compra.</p>
+                    <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--accent-green);">📱 Suporte por 1 Ano</h3>
+                        <p>Tire dúvidas e receba orientação via WhatsApp durante 1 ano inteiro após a compra.</p>
                     </div>
                 </div>
             </div>
@@ -590,22 +550,21 @@
     <section class="pricing-section">
         <div class="container">
             <div class="pricing-box">
-                <h3 style="color: #777; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Oferta Especial</h3>
+                <h3>Investimento Único</h3>
                 <p class="price-old">De R$ 597,00</p>
                 <p class="price-new">R$ 597</p>
-                <p style="color: var(--accent-green); font-weight: 700; font-size: 1.2rem; margin-bottom: 30px;">PAGAMENTO ÚNICO</p>
+                <p style="color: #666; font-weight: 600;">PAGAMENTO ÚNICO</p>
                 
                 <ul class="features-list">
                     <li>Curso completo de higienização de estofados</li>
                     <li>Técnicas para sofás, veículos, tapetes e couro</li>
                     <li>Módulo de negócios, marketing e vendas</li>
                     <li>Suporte exclusivo por WhatsApp (1 ano)</li>
-                    <li>Certificado de conclusão profissional</li>
-                    <li>Acesso vitalício ao conteúdo</li>
+                    <li>Certificado de conclusão</li>
                 </ul>
 
                 <a href="https://pay.hotmart.com/O45369019T?off=a8af6vls" class="btn-cta" style="width: 100%;">Quero Começar Meu Negócio</a>
-                <p style="margin-top: 20px; font-size: 0.85rem; color: #888;">🔒 Compra 100% Segura via Hotmart</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Acesso imediato após a confirmação.</p>
             </div>
         </div>
     </section>
@@ -635,8 +594,8 @@
                 <div class="faq-answer">Sim! Você terá suporte pelo WhatsApp durante 1 ano inteiro.</div>
             </div>
             <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-question">O acesso é imediato? <span>+</span></div>
-                <div class="faq-answer">Sim! Assim que o pagamento for confirmado, você receberá os dados de acesso por e-mail.</div>
+                <div class="faq-question">Quanto custa? <span>+</span></div>
+                <div class="faq-answer">O investimento é de apenas R$ 597,00 em pagamento único. Sem mensalidades.</div>
             </div>
         </div>
     </section>
@@ -644,10 +603,10 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <h2 style="color: white; margin-bottom: 20px; font-size: 2rem;">Sua Nova Profissão Começa Aqui</h2>
-            <p style="margin-bottom: 40px; font-size: 1.2rem; opacity: 0.9;">Mais de 10 anos de experiência. Milhares de alunos formados.</p>
-            <a href="https://pay.hotmart.com/O45369019T?off=a8af6vls" class="btn-cta" style="background: white; color: var(--primary-blue);">Garantir Minha Vaga Agora</a>
-            <p style="margin-top: 50px; font-size: 0.8rem; opacity: 0.4;">&copy; 2023 Guia de Higienização. Todos os direitos reservados.</p>
+            <h2 style="color: white; margin-bottom: 20px;">Sua Nova Profissão Começa Aqui</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem; opacity: 0.9;">Mais de 10 anos de experiência. Milhares de alunos formados.</p>
+            <a href="https://pay.hotmart.com/O45369019T?off=a8af6vls" class="btn-cta">Garantir Minha Vaga Agora</a>
+            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">&copy; 2023 Guia de Higienização. Todos os direitos reservados.</p>
         </div>
     </footer>
 
