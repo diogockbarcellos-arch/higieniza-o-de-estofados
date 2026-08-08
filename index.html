@@ -33,37 +33,24 @@
             padding: 0 20px;
         }
 
-        /* HERO SECTION - CORRIGIDO PARA CELULAR */
+        /* HERO SECTION - COM FOTO DE FUNDO E AZUL */
         header {
-            /* Garante que a imagem cubra tudo sem distorcer */
-            background-image: linear-gradient(rgba(0, 50, 100, 0.7), rgba(0, 86, 179, 0.6)), url('foto.1.jpg');
-            background-size: cover;       /* Cobre toda a área */
-            background-position: center;  /* Centraliza a foto (importante para celular) */
+            /* Gradiente azul sobre a foto.1.jpg */
+            background-image: linear-gradient(rgba(0, 60, 120, 0.75), rgba(0, 86, 179, 0.6)), url('foto.1.jpg');
+            background-size: cover;
+            background-position: center; /* Centraliza a imagem */
             background-repeat: no-repeat;
+            background-attachment: scroll;
             
             color: white;
             text-align: center;
             padding: 100px 20px;
-            
-            /* Garante altura mínima para a foto aparecer no celular */
-            min-height: 80vh; 
+            min-height: 85vh; /* Altura mínima para garantir que a foto apareça */
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             width: 100%;
-            overflow: hidden;
-        }
-
-        /* Ajuste específico para telas muito pequenas (celulares antigos) */
-        @media (max-width: 480px) {
-            header {
-                min-height: 70vh; /* Altura suficiente para mostrar a foto e o texto */
-                background-position: center 30%; /* Ajusta o foco da imagem um pouco mais para cima no mobile */
-            }
-            header h1 {
-                font-size: 1.8rem; /* Texto um pouco menor para caber melhor */
-            }
         }
 
         header h1 {
@@ -71,7 +58,7 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             line-height: 1.2;
         }
 
@@ -267,24 +254,18 @@
         }
 
         .price-installments {
-            font-size: 1.4rem;
-            color: #555;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .price-new {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             font-weight: 800;
             color: var(--accent-green);
             margin: 10px 0;
             line-height: 1;
         }
 
-        .price-details {
-            color: #777;
-            font-size: 1rem;
+        .price-label {
+            font-size: 1.2rem;
+            color: #666;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .features-list {
@@ -379,8 +360,14 @@
             header h1 { font-size: 2.2rem; }
             .experience-grid { grid-template-columns: 1fr; }
             .pricing-box { padding: 30px 20px; }
-            .price-new { font-size: 3.5rem; }
+            .price-installments { font-size: 2.5rem; }
             .btn-cta { width: 100%; padding: 15px 20px; font-size: 1rem; }
+            
+            /* Ajuste extra para mobile na foto de fundo */
+            header {
+                background-position: center 30%;
+                min-height: 75vh;
+            }
         }
     </style>
 </head>
@@ -407,6 +394,7 @@
                 <p style="font-size: 0.9rem; color: #666; margin-top: 10px;"><em>*Resultados variam conforme dedicação e região.</em></p>
             </div>
             <div class="experience-img">
+                <!-- FOTO 2 -->
                 <img src="foto.2.jpg" alt="Profissional limpando sofá">
             </div>
         </div>
@@ -419,6 +407,7 @@
             <div class="benefits-grid">
                 <!-- Card 1 -->
                 <div class="benefit-card">
+                    <!-- FOTO 3 -->
                     <img src="foto.3.jpg" alt="Trabalhar sozinho">
                     <div class="benefit-content">
                         <h3>Autonomia Total</h3>
@@ -427,6 +416,7 @@
                 </div>
                 <!-- Card 2 -->
                 <div class="benefit-card">
+                    <!-- FOTO 4 -->
                     <img src="foto.4.jpg" alt="Atender na casa do cliente">
                     <div class="benefit-content">
                         <h3>Sem Loja Física</h3>
@@ -435,6 +425,7 @@
                 </div>
                 <!-- Card 3 -->
                 <div class="benefit-card">
+                    <!-- FOTO 5 -->
                     <img src="foto.5.jpg" alt="Poucos equipamentos">
                     <div class="benefit-content">
                         <h3>Baixo Investimento</h3>
@@ -484,6 +475,7 @@
 
             <!-- Módulo 3 -->
             <div class="module-card">
+                <!-- FOTO 6 -->
                 <img src="foto.6.jpg" alt="Módulo Vendas e Atendimento">
                 <div class="module-content">
                     <h3>Módulo 3 — Atendimento e Vendas</h3>
@@ -558,9 +550,8 @@
         <div class="container">
             <div class="pricing-box">
                 <h3>Investimento Acessível</h3>
-                <p class="price-installments">Em até 5x de</p>
-                <p class="price-new">R$ 119,40</p>
-                <p class="price-details">ou R$ 597,00 à vista</p>
+                <p class="price-label">Em até 5x no cartão</p>
+                <p class="price-installments">5x de R$ 119,40</p>
                 
                 <ul class="features-list">
                     <li>Curso completo de higienização de estofados</li>
@@ -602,7 +593,7 @@
             </div>
             <div class="faq-item" onclick="this.classList.toggle('active')">
                 <div class="faq-question">Quanto custa? <span>+</span></div>
-                <div class="faq-answer">O investimento é de apenas 5x de R$ 119,40 no cartão de crédito. Um valor que cabe no bolso e pode se pagar com os primeiros atendimentos.</div>
+                <div class="faq-answer">O investimento é de apenas 5x de R$ 119,40 no cartão. Uma parcela pequena para começar seu próprio negócio.</div>
             </div>
         </div>
     </section>
